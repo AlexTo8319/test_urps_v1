@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #1e3a5f; }
+::-webkit-scrollbar-thumb { background: #4a90c4; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #6bb0e0; }
+
+.modal-backdrop {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.leaflet-popup-content {
+  margin: 12px 16px;
+  font-family: 'Inter', sans-serif;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  height: 4px;
+  background: #4a90c4;
+  border-radius: 2px;
+  outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  background: #2980b9;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.consent-page {
+  background: linear-gradient(135deg, #1a5276 0%, #2980b9 100%);
+}
