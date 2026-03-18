@@ -18,7 +18,7 @@ export default function SurveyPublicPage({ surveyId }) {
   const [feedbackPoints, setFeedbackPoints] = useState([]);
   const [submitted, setSubmitted] = useState(false);
 
-  const survey = surveys.find((s) => s.id === surveyId);
+  const survey = surveys.find((s) => s.id === surveyId || s.code === surveyId);
 
   if (!survey) {
     return (

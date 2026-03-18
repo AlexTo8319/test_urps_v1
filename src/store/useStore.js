@@ -1,9 +1,10 @@
 import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
 import { v4 as uuidv4 } from 'uuid';
 import { HROMADAS, DATASET_CLUSTERS } from '../data/catalog';
 import { generateSampleData, DREAM_PROJECTS } from '../data/sampleData';
 
-const useStore = create((set, get) => ({
+const useStore = create(persist((set, get) => ({
   // Hromada
   currentHromada: HROMADAS[1], // Default to Irpin
   setCurrentHromada: (hromada) => set({ currentHromada: hromada }),
@@ -149,6 +150,9 @@ const useStore = create((set, get) => ({
     activeFilters: { ...s.activeFilters, [key]: value },
   })),
   clearFilters: () => set({ activeFilters: {} }),
+}), {
+  name: 'urps-storage',
+  partialize: (state) => ({ surveys: state.surveys }),
 }));
 
 export default useStore;
